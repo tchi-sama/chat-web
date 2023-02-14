@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.icon path{
+  fill:#494C50;
+}
+.icon , .iconActive path{
+  fill:#399AD3;
+}
