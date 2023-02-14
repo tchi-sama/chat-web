@@ -7,9 +7,7 @@ import Right from '../components/Right'
 function Home() {
   return (
     <div className='flex-1 flex'>
-        <Left />
-        <Center/>
-        <Right/>
+        <Navbar where={"home"}/>
     </div>
   )
 }
