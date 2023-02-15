@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 import Right from '../components/Right'
 
 function MessagesPage() {
-  const [rightOpen, setRightOpen] = React.useState(true);
+  const [rightOpen, setRightOpen] = React.useState(false);
   const [leftOpen, setLeftOpen] = React.useState(false);
   const infoToggle = () => {
     setRightOpen(p=>!p);

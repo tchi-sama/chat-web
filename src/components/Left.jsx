@@ -7,7 +7,7 @@ import { IconButton } from "@mui/material";
 
 function Left() {
   return (
-    <div className="p-2 hidden w-[20%] min-w-[250px] bg-[#1C1C25] md:flex flex-col">
+    <div className="p-2 max-w-[400px]  hidden w-[20%] min-w-[250px] bg-[#1C1C25] md:flex flex-col">
       <OnlineFriends />
       <div className="w-[80%] h-[0.8px] rounded-full bg-gray-800 mx-auto"></div>
       

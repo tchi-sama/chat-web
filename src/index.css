@@ -21,8 +21,16 @@ html {
   background: #399AD3;
 }
 
-
+.msgsviewr::-webkit-scrollbar {
+  display: none;
+}
 
 .icon2 path{
   fill:#72777c;
+}
+.icon2:hover path{
+  fill:#399AD3;
+}
+.icon3 path{
+  stroke:#72777c;
 }

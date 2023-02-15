@@ -17,14 +17,14 @@ function ChatinList({ userName, lastMsg, state }) {
           {
             (typeof(state)==="number" && state !== 0 )? 
             <p className="flex justify-center items-center px-2 bg-prime w-fit rounded-full text-sm text-white">
-              {typeof state === "number" ? state : null}
+              {typeof state === "number" ? state : ""}
             </p>
             : null
           }
         </div>
         <div className="flex items-end">
           <p className="text-white opacity-30 text-sm flex-1">
-            {lastMsg.substr(0, 12) + (lastMsg.length > 12 ? "..." : null)}
+            {lastMsg.substr(0, 12) + (lastMsg.length > 12 ? "..." : "")}
           </p>
           <p className="text-white opacity-30 text-xs">2:15 Am</p>
         </div>
