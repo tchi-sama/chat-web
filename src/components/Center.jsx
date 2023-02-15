@@ -8,8 +8,8 @@ import Msg from "./Msg";
 
 function Center({ infoToggle }) {
   return (
-    <div className="flex-1 bg-[#131519] h-full relative">
-      <div className="z-50 absolute w-full left-0 top-0 p-1 bg-white bg-opacity-5 backdrop-blur-2xl drop-shadow-lg ">
+    <div className="flex-1 bg-[#131519] h-full relative center">
+      <div className="z-50 absolute w-full left-0 top-0 p-1 bg-[#ffffff03] backdrop-blur-2xl drop-shadow-lg ">
         <div className="flex items-center gap-2">
           <div className="flex w-full items-center">
             <div className="flex items-center gap-3 flex-1 ">
@@ -37,7 +37,7 @@ function Center({ infoToggle }) {
 
       </main>
 
-      <form className="flex items-center border-[#fff1] border z-50 rounded-xl absolute bottom-2 p-1  w-[calc(100%-60px)] left-[50%] translate-x-[-50%] bg-white bg-opacity-5 backdrop-blur-2xl drop-shadow-lg">
+      <form className="flex items-center border-[#fff1] border z-50 rounded-xl absolute bottom-2 p-1  w-[calc(100%-60px)] left-[50%] translate-x-[-50%] bg-[#ffffff03] backdrop-blur-2xl ">
         <IconButton className="icon3" >
         <LinkIcon />
         </IconButton>

@@ -4,11 +4,12 @@ import { ReactComponent as MsgIcon } from "../svgs/message.svg";
 import { ReactComponent as HomeIcon } from "../svgs/home.svg";
 import { ReactComponent as NotIcon } from "../svgs/notificationbing.svg";
 import { ReactComponent as SetIcon } from "../svgs/setting.svg";
+import { ReactComponent as Logo } from "../svgs/Logo.svg";
 
 function Navbar({where}) {
   return (
     <div className="w-20 py-3 bg-[#18181C] h-full flex items-center flex-col gap-3">
-      {/* <h1 className="text-xl text-[#399ad3] p-2 font-bold ">Logo</h1> */}
+      <Logo className="w-14 h-14 p-2"/>
       <IconButton>
 
         <Badge variant="dot" overlap="circular" color="primary" badgeContent=" ">

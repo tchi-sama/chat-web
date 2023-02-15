@@ -25,6 +25,10 @@ html {
   display: none;
 }
 
+.center{
+  background-image: url("./bg/bg2.jpg");
+}
+
 .icon2 path{
   fill:#72777c;
 }
@@ -33,4 +37,9 @@ html {
 }
 .icon3 path{
   stroke:#72777c;
+}
+
+
+.bg1{
+  background-image: url("./bg/bg1.jpg");
 }
