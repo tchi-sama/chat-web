@@ -13,3 +13,10 @@ html {
 .icon , .iconActive path{
   fill:#399AD3;
 }
+.text-prime{
+  color: #399AD3;
+}
+
+.bg-prime{
+  background: #399AD3;
+}
