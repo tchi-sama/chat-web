@@ -69,6 +69,7 @@ function SearchChatUser() {
         });
       }
       setUser(null)
+      setUsername("")
     } catch (err) {
       setErr(true);
       console.log(err)

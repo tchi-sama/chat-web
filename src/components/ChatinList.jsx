@@ -1,19 +1,25 @@
 import { Avatar, Badge } from "@mui/material";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { ChatContext } from "../context/ChatContext";
 
-function ChatinList({ userName, lastMsg, state }) {
+function ChatinList({ id,avatar,name, message, state }) {
+  const {ChatUser,setChatUser}=useContext(ChatContext);
+  const handleSelect = (e) => {
+    setChatUser(id)
+  };
+  
   return (
     <>
-    <div className="  hover:bg-[#191921] flex gap-3 p-2 w-full rounded-lg cursor-pointer">
+    <div onClick={handleSelect} className="  hover:bg-[#191921] flex gap-3 p-2 w-full rounded-lg cursor-pointer">
       <Badge variant="dot" overlap="circular" color="primary" badgeContent=" ">
         <Avatar
           sx={{ width: 50, height: 50 }}
-          src="https://picsum.photos/200/201"
+          src={avatar}
         />
       </Badge>
       <div className="flex-1">
         <div className="flex ">
-          <h3 className="text-white flex-1">{userName}</h3>
+          <h3 className="text-white flex-1">{name}</h3>
           {
             (typeof(state)==="number" && state !== 0 )? 
             <p className="flex justify-center items-center px-2 bg-prime w-fit rounded-full text-sm text-white">
@@ -24,7 +30,7 @@ function ChatinList({ userName, lastMsg, state }) {
         </div>
         <div className="flex items-end">
           <p className="text-white opacity-30 text-sm flex-1">
-            {lastMsg.substr(0, 12) + (lastMsg.length > 12 ? "..." : "")}
+            {message.substr(0, 12) + (message.length > 12 ? "..." : "")}
           </p>
           <p className="text-white opacity-30 text-xs">2:15 Am</p>
         </div>

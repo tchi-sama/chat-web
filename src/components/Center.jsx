@@ -1,12 +1,15 @@
 import { Avatar, IconButton } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as MoreIcon } from "../svgs/more.svg";
 import { ReactComponent as SearchIcon } from "../svgs/searchnormal1.svg";
 import { ReactComponent as SendIcon } from "../svgs/send.svg";
 import { ReactComponent as LinkIcon } from "../svgs/link.svg";
 import Msg from "./Msg";
+import { ChatContext } from "../context/ChatContext";
 
 function Center({ infoToggle }) {
+  const {ChatUser , setChatUser} = React.useContext(ChatContext);
+  
   return (
     <div className="flex-1 bg-[#131519] h-full relative center">
       <div className="z-50 absolute w-full left-0 top-0 p-1 bg-[#ffffff03] backdrop-blur-2xl drop-shadow-lg ">
