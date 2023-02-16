@@ -56,6 +56,7 @@ function SearchChatUser() {
             uid: user.uid,
             displayName: user.displayName,
             photoURL: user.photoURL,
+
           },
           [combinedId + ".data"]: serverTimestamp(),
         });
