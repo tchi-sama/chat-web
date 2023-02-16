@@ -1,6 +1,16 @@
 import { Avatar } from "@mui/material";
 import { ReactComponent as SearchIcon } from "../svgs/searchnormal1.svg";
-import { collection, doc, getDocs, query, setDoc, where } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  serverTimestamp,
+  setDoc,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
@@ -24,6 +34,7 @@ function SearchChatUser() {
       });
     } catch (err) {
       setErr(true);
+      console.log(err)
     }
   };
   const handleKey = (e) => {
@@ -36,12 +47,31 @@ function SearchChatUser() {
         ? currentUser.uid + user.uid
         : user.uid + currentUser.uid;
     try {
-      const res = await getDocs(db, "chats", combinedId);
-      if(!res.exists()){
-        await setDoc(doc,(db,"chats",combinedId),{messages:[]});
+      const res = await getDoc(doc(db, "chats", combinedId));
+      if (!res.exists()) {
+        await setDoc(doc(db, "chats", combinedId), { messages: [] });
+
+        await updateDoc(doc(db, "userChats", currentUser.uid), {
+          [combinedId + ".usrInfo"]: {
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          },
+          [combinedId + ".data"]: serverTimestamp(),
+        });
+        await updateDoc(doc(db, "userChats", user.uid), {
+          [combinedId + ".usrInfo"]: {
+            uid: currentUser.uid,
+            displayName: currentUser.displayName,
+            photoURL: currentUser.photoURL,
+          },
+          [combinedId + ".data"]: serverTimestamp(),
+        });
       }
+      setUser(null)
     } catch (err) {
       setErr(true);
+      console.log(err)
     }
   };
   return (
