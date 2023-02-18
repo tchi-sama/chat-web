@@ -68,12 +68,15 @@ function Msg({ msg }) {
     setText("");
     setImage(null);
   };
-
+  console.log(data)
   return (
-    <div>
+    <div className="overflow-hidden">
       <form
         onSubmit={handleSend}
-        className="flex items-center border-[#fff1] border z-50 rounded-xl absolute bottom-2 p-1  w-[calc(100%-60px)] left-[50%] translate-x-[-50%] bg-[#ffffff03] backdrop-blur-2xl "
+        className={
+            data.chatId!=="null"?"translate-y-0 duration-200 flex items-center border-[#fff1] border z-50 rounded-xl absolute bottom-2 p-1  w-[calc(100%-60px)] left-[50%] translate-x-[-50%] bg-[#ffffff03] backdrop-blur-2xl "
+            :"translate-y-20 flex items-center duration-200 border-[#fff1] border z-50 rounded-xl absolute bottom-2 p-1  w-[calc(100%-60px)] left-[50%] translate-x-[-50%] bg-[#ffffff03] backdrop-blur-2xl "
+        }
       >
         <label htmlFor="file">
           <LinkIcon className="mx-2 icon3 rounded-full cursor-pointer" />

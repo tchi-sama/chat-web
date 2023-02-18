@@ -2,8 +2,8 @@ import { Avatar, Badge } from "@mui/material";
 import React, { useContext, useEffect } from "react";
 import { ChatContext } from "../context/ChatContext";
 
-function ChatinList({ handleSelect,info, id,avatar,name, message, state }) {
-  
+function ChatinList({ handleSelect,info, date, id,avatar,name, message, state }) {
+  console.log(info)
   return (
     <>
     <div onClick={()=>handleSelect(info)} className="  hover:bg-[#191921] flex gap-3 p-2 w-full rounded-lg cursor-pointer">
@@ -28,7 +28,7 @@ function ChatinList({ handleSelect,info, id,avatar,name, message, state }) {
           <p className="text-white opacity-30 text-sm flex-1">
             {message && (message?.substr(0, 12) + (message?.length > 12 ? "..." : ""))}
           </p>
-          <p className="text-white opacity-30 text-xs">2:15 Am</p>
+          <p className="text-white opacity-30 text-xs">{new Date(date).getHours()+":" + new Date(date).getMinutes()}</p>
         </div>
       </div>
     </div>

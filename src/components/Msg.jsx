@@ -11,7 +11,12 @@ function Msg({ msg }) {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   },[msg])
   return (
-      <div  className="py-2 flex gap-2 justify-start items-start hover:px-2 duration-200">
+      <div  className={
+              msg.senderId === currentUser.uid
+                ? "py-2 flex gap-2 justify-start items-start hover:px-2 duration-200"
+                : "py-2 flex gap-2 justify-start items-start hover:px-2 duration-200"
+        
+        }>
         <IconButton>
           <Avatar
             src={
@@ -23,19 +28,19 @@ function Msg({ msg }) {
         </IconButton>
         <div className="flex flex-col gap-1">
           <div className="flex w-full justify-between items-end">
-            <h1 className="text-white">{
+            {/* <h1 className="text-white">{
               msg.senderId === currentUser.uid
                 ? currentUser.displayName
                 : data.user.displayName
-            }</h1>
+            }</h1> */}
           </div>
           {msg?.text && (
-            <p ref={ref} className="shadow-2xl w-fit text-sm text-white p-3 bg-[#20222b] rounded-xl">
+            <p ref={ref} className="shadow-2xl w-fit text-sm text-white p-2 px-3 bg-[#20222b] rounded-xl">
               {msg.text}
             </p>
           )}
           {msg?.image && (
-            <img ref={ref} className="max-w-[250px] " src={msg?.image}></img>
+            <img ref={ref} className="rounded-2xl max-w-[250px] " src={msg?.image}></img>
           )}
             <span className="text-xs text-gray-400">{new Date(msg?.date).getHours()+":" + new Date(msg?.date).getMinutes()}</span>
         </div>

@@ -22,6 +22,7 @@ function ChatList() {
   const handleSelect = (u)=>{
     dispatch({type:"CHANGE_USER",payload:u})
   }
+  console.log(Object.entries(chats)[0])
   return (
     <div className="p-2 flex overflow-x-auto flex-col items-start w-full gap-1">
       {
@@ -35,6 +36,7 @@ function ChatList() {
           message={chat[1].lastMessage?.text}
           avatar={chat[1].usrInfo?.photoURL}
           uid={chat[1].usrInfo?.uid}
+          date={chat[1].date}
           state={""}
         />
         ))
