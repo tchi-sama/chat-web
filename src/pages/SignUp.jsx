@@ -2,13 +2,13 @@ import { ReactComponent as Logo } from "../svgs/Logo.svg";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { useState } from "react";
-import { ref , uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [err, setErr] = useState(false);
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -88,7 +88,9 @@ function SignUp() {
         {err ? (
           <p className="text-red-500 text-center">Invalid Credentials</p>
         ) : null}
-        <p className="text-xs text-white">You have an account aleardy ?<Link to="/signin">SignIn</Link></p>
+        <p className="text-xs text-white">
+          You have an account aleardy ?<Link to="/signin">SignIn</Link>
+        </p>
       </form>
     </div>
   );

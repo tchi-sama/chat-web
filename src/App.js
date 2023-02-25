@@ -4,12 +4,12 @@ import Pages from "./pages/Pages";
 import { AuthContext } from "./context/AuthContext";
 
 function App() {
-  const {currentUser} = useContext(AuthContext);
-  
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="">
       <BrowserRouter>
-      <Pages/>
+        <Pages />
       </BrowserRouter>
     </div>
   );
